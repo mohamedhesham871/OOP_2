@@ -58,12 +58,19 @@ namespace ConsoleApp2
         //    Blue
         //}
         #endregion
-        #region Q6 :
-        struct Point {
-            public double x;
-            public double y;
-        }
+        #region Q6 :Points Enum
+        //struct Point {
+        //    public double x;
+        //    public double y;
+        //}
 
+        #endregion
+        #region Q7 Person strcut
+        struct Person
+        {
+            public string Name;
+            public int Age;
+        }
         #endregion
         static void Main(string[] args)
         {
@@ -135,21 +142,41 @@ namespace ConsoleApp2
             //}
             #endregion
             #region Q6 :Create a struct called "Point" to represent a 2D point with properties "X" and "Y"
-            Point pt1 = new Point();
-            Point pt2= new Point();
-            Console.WriteLine("Enter x and Y for First Point");
-            string Input = Console.ReadLine();
-            //Point one 
-            pt1.x=double.Parse(Input.Split(' ')[0]);
-            pt1.y=double.Parse(Input.Split(' ')[1]);
-            Console.WriteLine("Enter x and Y for Second Point");
-             Input = Console.ReadLine();
-            pt2.x = double.Parse(Input.Split(' ')[0]);
-            pt2.y = double.Parse(Input.Split(' ')[1]);
+            //Point pt1 = new Point();
+            //Point pt2= new Point();
+            //Console.WriteLine("Enter x and Y for First Point");
+            //string Input = Console.ReadLine();
+            ////Point one 
+            //pt1.x=double.Parse(Input.Split(' ')[0]);
+            //pt1.y=double.Parse(Input.Split(' ')[1]);
+            //Console.WriteLine("Enter x and Y for Second Point");
+            // Input = Console.ReadLine();
+            //pt2.x = double.Parse(Input.Split(' ')[0]);
+            //pt2.y = double.Parse(Input.Split(' ')[1]);
 
-            //Calculate Distance 
-            double Distance = Math.Sqrt(Math.Pow(pt2.x - pt1.x, 2) + Math.Pow(pt2.y - pt1.y, 2));
-            Console.WriteLine($"Distance Between Two Points is :{Distance}");
+            ////Calculate Distance 
+            //double Distance = Math.Sqrt(Math.Pow(pt2.x - pt1.x, 2) + Math.Pow(pt2.y - pt1.y, 2));
+            //Console.WriteLine($"Distance Between Two Points is :{Distance}");
+            #endregion
+            #region Q7:
+            Person[] person = new Person[3];
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Enter name of perons  Name ");
+                person[i].Name = Console.ReadLine();
+
+                Console.WriteLine("Enter Ages of pesron ");
+                person[i].Age = int.Parse(Console.ReadLine());
+            }
+            Person older= person[0];
+            foreach (Person p in person)
+            {
+                if (p.Age > older.Age)
+                {
+                    older.Age = p.Age;
+                }
+            }
+            Console.WriteLine($"Old man is {older.Name} and  Age is {older.Age}");
             #endregion
         }
     }
