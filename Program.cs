@@ -27,19 +27,26 @@ namespace ConsoleApp2
         #endregion
 
         #region Q3 :make enum for season 
-        enum Season
+        //enum Season
+        //{
+        //    Spring=1, 
+        //    Summer=2,
+        //    Autumn=3,
+        //    Winter=4
+        //}
+
+
+        #endregion
+        #region Q4 Assign the following Permissions (Read, write, Delete, Execute) in a form of Enum.
+        [Flags]
+        enum Permission:Byte
         {
-            Spring=1, 
-            Summer=2,
-            Autumn=3,
-            Winter=4
-        }
-        enum monthes {
-            
-            
-            
-            
-          
+                None=0,
+                Read=1,
+                Write=2,
+                Delete=4,
+                Execute=8
+           
         }
 
         #endregion
@@ -69,27 +76,37 @@ namespace ConsoleApp2
             //}
 
             #endregion
-            #region MyRegion
-            string input=Console.ReadLine();
-            bool h = Enum.TryParse(input ,out Season season);
-            if (!h) { Console.WriteLine("Invalid input"); }
-            
-           switch(season)
-            {
-                case Season.Spring:
-                    Console.WriteLine("Months : March , April,  May ");
-                    break;
-                case Season.Summer:
-                    Console.WriteLine("Months : June , July , August ");
-                    break;
-                case Season.Autumn:
-                    Console.WriteLine("Months : September, October, November ");
-                    break;
-                case Season.Winter:                        
-                    Console.WriteLine("Months :   December , January , February ");
-                      break;
-            }
+            #region Q3 Season Enum
+            // string input=Console.ReadLine();
+            // bool h = Enum.TryParse(input ,out Season season);
+            // if (!h) { Console.WriteLine("Invalid input"); }
 
+            //switch(season)
+            // {
+            //     case Season.Spring:
+            //         Console.WriteLine("Months : March , April,  May ");
+            //         break;
+            //     case Season.Summer:
+            //         Console.WriteLine("Months : June , July , August ");
+            //         break;
+            //     case Season.Autumn:
+            //         Console.WriteLine("Months : September, October, November ");
+            //         break;
+            //     case Season.Winter:                        
+            //         Console.WriteLine("Months :   December , January , February ");
+            //           break;
+            // }
+
+            #endregion
+            #region Q4 Permissions (Read, write, Delete, Execute)
+
+            Permission permession = Permission.Read|Permission.Delete;
+            Console.WriteLine(permession);
+            //if foud Delete will delete it else will Add it
+            permession ^= Permission.Delete;
+            //Cheak if it Foud or not
+            permession &= Permission.Delete;
+            Console.WriteLine(permession);
             #endregion
         }
     }
