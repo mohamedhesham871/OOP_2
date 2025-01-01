@@ -51,12 +51,19 @@ namespace ConsoleApp2
 
         #endregion
         #region Q5 :Create an enum called "Colors" with the basic colors (Red, Green, Blue) as its members.
-        enum Colors
-        {
-            Red,
-            Green,
-            Blue
+        //enum Colors
+        //{
+        //    Red,
+        //    Green,
+        //    Blue
+        //}
+        #endregion
+        #region Q6 :
+        struct Point {
+            public double x;
+            public double y;
         }
+
         #endregion
         static void Main(string[] args)
         {
@@ -117,15 +124,32 @@ namespace ConsoleApp2
             //Console.WriteLine(permession);
             #endregion
             #region Q5 Enum of Color
+            //string Input = Console.ReadLine();
+            //if(Enum.TryParse(Input,out Colors color))
+            //{
+            //    Console.WriteLine($"Primary Color is {color}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("it's not Primary Color");
+            //}
+            #endregion
+            #region Q6 :Create a struct called "Point" to represent a 2D point with properties "X" and "Y"
+            Point pt1 = new Point();
+            Point pt2= new Point();
+            Console.WriteLine("Enter x and Y for First Point");
             string Input = Console.ReadLine();
-            if(Enum.TryParse(Input,out Colors color))
-            {
-                Console.WriteLine($"Primary Color is {color}");
-            }
-            else
-            {
-                Console.WriteLine("it's not Primary Color");
-            }
+            //Point one 
+            pt1.x=double.Parse(Input.Split(' ')[0]);
+            pt1.y=double.Parse(Input.Split(' ')[1]);
+            Console.WriteLine("Enter x and Y for Second Point");
+             Input = Console.ReadLine();
+            pt2.x = double.Parse(Input.Split(' ')[0]);
+            pt2.y = double.Parse(Input.Split(' ')[1]);
+
+            //Calculate Distance 
+            double Distance = Math.Sqrt(Math.Pow(pt2.x - pt1.x, 2) + Math.Pow(pt2.y - pt1.y, 2));
+            Console.WriteLine($"Distance Between Two Points is :{Distance}");
             #endregion
         }
     }
