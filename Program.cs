@@ -38,17 +38,25 @@ namespace ConsoleApp2
 
         #endregion
         #region Q4 Assign the following Permissions (Read, write, Delete, Execute) in a form of Enum.
-        [Flags]
-        enum Permission:Byte
-        {
-                None=0,
-                Read=1,
-                Write=2,
-                Delete=4,
-                Execute=8
-           
-        }
+        //[Flags]
+        //enum Permission:Byte
+        //{
+        //        None=0,
+        //        Read=1,
+        //        Write=2,
+        //        Delete=4,
+        //        Execute=8
 
+        //}
+
+        #endregion
+        #region Q5 :Create an enum called "Colors" with the basic colors (Red, Green, Blue) as its members.
+        enum Colors
+        {
+            Red,
+            Green,
+            Blue
+        }
         #endregion
         static void Main(string[] args)
         {
@@ -100,13 +108,24 @@ namespace ConsoleApp2
             #endregion
             #region Q4 Permissions (Read, write, Delete, Execute)
 
-            Permission permession = Permission.Read|Permission.Delete;
-            Console.WriteLine(permession);
-            //if foud Delete will delete it else will Add it
-            permession ^= Permission.Delete;
-            //Cheak if it Foud or not
-            permession &= Permission.Delete;
-            Console.WriteLine(permession);
+            //Permission permession = Permission.Read|Permission.Delete;
+            //Console.WriteLine(permession);
+            ////if foud Delete will delete it else will Add it
+            //permession ^= Permission.Delete;
+            ////Cheak if it Foud or not
+            //permession &= Permission.Delete;
+            //Console.WriteLine(permession);
+            #endregion
+            #region Q5 Enum of Color
+            string Input = Console.ReadLine();
+            if(Enum.TryParse(Input,out Colors color))
+            {
+                Console.WriteLine($"Primary Color is {color}");
+            }
+            else
+            {
+                Console.WriteLine("it's not Primary Color");
+            }
             #endregion
         }
     }
