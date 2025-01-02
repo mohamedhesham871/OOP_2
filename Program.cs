@@ -66,11 +66,11 @@ namespace ConsoleApp2
 
         #endregion
         #region Q7 Person strcut
-        struct Person
-        {
-            public string Name;
-            public int Age;
-        }
+        //struct Person
+        //{
+        //    public string Name;
+        //    public int Age;
+        //}
         #endregion
         static void Main(string[] args)
         {
@@ -159,24 +159,37 @@ namespace ConsoleApp2
             //Console.WriteLine($"Distance Between Two Points is :{Distance}");
             #endregion
             #region Q7:
-            Person[] person = new Person[3];
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine("Enter name of perons  Name ");
-                person[i].Name = Console.ReadLine();
+            //Person[] person = new Person[3];
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.WriteLine("Enter name of perons  Name ");
+            //    person[i].Name = Console.ReadLine();
 
-                Console.WriteLine("Enter Ages of pesron ");
-                person[i].Age = int.Parse(Console.ReadLine());
-            }
-            Person older= person[0];
-            foreach (Person p in person)
-            {
-                if (p.Age > older.Age)
-                {
-                    older.Age = p.Age;
-                }
-            }
-            Console.WriteLine($"Old man is {older.Name} and  Age is {older.Age}");
+            //    Console.WriteLine("Enter Ages of pesron ");
+            //    person[i].Age = int.Parse(Console.ReadLine());
+            //}
+            //Person older= person[0];
+            //foreach (Person p in person)
+            //{
+            //    if (p.Age > older.Age)
+            //    {
+            //        older.Age = p.Age;
+            //    }
+            //}
+            //Console.WriteLine($"Old man is {older.Name} and  Age is {older.Age}");
+            #endregion
+
+            #region Class Employee
+
+            Employee[] EmpArr = new Employee[3];
+            //string name,int iD,double sal,string sec,string g
+            EmpArr[0]=  new Employee("mohamed",9,4500,"DBA","M",  new hiringDate(2009, 9, 1));
+            EmpArr[1] = new Employee("ALi", 3, 4500, "Secretary", "M",new hiringDate(2000, 6, 12));
+            EmpArr[2] = new Employee("Mai", 4, 9000, "Guest", "F", new hiringDate(1980, 4, 3));
+       
+            Console.WriteLine(EmpArr[0]); 
+            Console.WriteLine(EmpArr[1]);
+            Console.WriteLine(EmpArr[2]);
             #endregion
         }
     }
